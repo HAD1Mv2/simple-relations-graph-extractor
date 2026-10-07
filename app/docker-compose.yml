@@ -1,0 +1,21 @@
+services:
+  portofolio_hadi_relation_extract_2:
+    image: "relation_extraction:v2"
+    # restart: always
+    container_name: relation_extraction_v2
+    build: .
+    ports:
+      - "1001:1001"
+    environment:
+      PORT: 1001
+      APP_KEY: "12345XOXO"
+      CUDA_VISIBLE_DEVICES: "0"
+      NER_MODEL_PATH: "HAD1Mv2/distilbert-conllpp-eg"
+      REL_MODEL_PATH: "HAD1Mv2/distilbert-kbp37-eg"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]

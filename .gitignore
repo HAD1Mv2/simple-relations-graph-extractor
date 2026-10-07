@@ -9,3 +9,5 @@ API/NER/model/checkpoint-10530/optimizer.pt
 API/NER/model/checkpoint-10530/scheduler.pt
 API/NER/model/checkpoint-10530/trainer_state.json
 API/NER/model/checkpoint-10530/training_args.bin
+test.py
+.vscode
